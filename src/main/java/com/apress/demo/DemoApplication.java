@@ -13,8 +13,11 @@ public class DemoApplication {
 
     public static void main(String [] args) {
 
-        //Setting active profiles
-//        System.setProperty("spring.profiles.active", "myBatis, production");
+        /** Setting active profiles
+        if no profile is specified then default profile will used
+         (default) expected Result: Datasource{driverClassName='Development_H2_InMemoryDB', url='mysql:jdbc:localhost:3306/myDevelopment_DB', username='development_admin', password='development_admin_password'}
+        **/
+        System.setProperty("spring.profiles.active", "myBatis, production");
         ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("classpath:META-INF/spring/applicationContext.xml");
         String [] beanDefinitionNames = context.getBeanDefinitionNames();
 
