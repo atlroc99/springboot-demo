@@ -4,4 +4,5 @@ import java.util.List;
 
 public interface MyDAO {
     List<String> getNames();
+    void printDataSourceInfo();
 }

@@ -1,6 +1,7 @@
 package com.apress.demo.Domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @Repository
 public class HibernateDaoImpl implements MyDAO {
 
+    @Autowired
     private Datasource datasource;
 
     @Autowired
@@ -22,4 +24,10 @@ public class HibernateDaoImpl implements MyDAO {
     public List<String> getNames() {
         return Arrays.asList("hibernate Name 1", "hibername name 2", " hibernate name3");
     }
+
+    @Override
+    public void printDataSourceInfo() {
+        System.out.println(datasource);
+    }
+
 }
