@@ -3,7 +3,7 @@ pipeline{
      label 'agent1'
   }
   stages{
-    stage{
+    stage ('testing'){
        steps {
         sh 'echo hello'
         sh 'java -version'
